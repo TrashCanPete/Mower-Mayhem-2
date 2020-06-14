@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu Scene.unity
+    guid: 9e30149d66a8fa6408944ab7de9006a3
+  - enabled: 1
+    path: Assets/Scenes/Character Select Scene.unity
+    guid: 9609a3e15272f074e9dfd2d184e4cee7
+  - enabled: 1
+    path: Assets/Scenes/Loading Scene.unity
+    guid: 636ec07bae16d6b4bb07ff1d7fe0e501
+  - enabled: 1
+    path: Assets/Scenes/Main Level.unity
+    guid: 68eba47b36d938142b743e4791cb48a0
+  - enabled: 1
+    path: Assets/Scenes/NameChooser Scene.unity
+    guid: 52ed052159ee33a4a8dd28550a447744
+  - enabled: 0
+    path: Assets/Scenes/Josh's Scene.unity
+    guid: 430d84e3c0d48e342863bc58416dde08
+  - enabled: 0
+    path: Assets/Scenes/Lawrence's Josh's scene.unity
+    guid: 69f1e567d12825b4e88625fc4b217d6d
+  - enabled: 0
+    path: Assets/Scenes/FinnScene.unity
+    guid: 0e99a0644308d354e861fc7225a3e646
+  m_configObjects: {}

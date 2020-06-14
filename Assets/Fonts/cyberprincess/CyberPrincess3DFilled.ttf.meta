@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 5f42dadf2029a2c47b85fd2559eb68ad
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cyber Princess 3D Filled
+  fontNames:
+  - Cyber Princess 3D Filled
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 1a4190d680da476468f8c8b1254e6b37, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

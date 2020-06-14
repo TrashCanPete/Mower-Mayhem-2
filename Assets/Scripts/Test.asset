@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 527465a7a47dabc4abb6cbbdb7b86ce7, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  accelerationLow: {fileID: 8300000, guid: 24af0b7ff70b03746b8db71c6493595d, type: 3}
+  accelerationHigh: {fileID: 8300000, guid: c0d66a603c5e52648ad8555e27b3783e, type: 3}
+  decelerationLow: {fileID: 8300000, guid: 3aa2aad1ea26aba48a25ea17e55e43fd, type: 3}
+  decelerationHigh: {fileID: 8300000, guid: 56c7ae3f14d10394b908b3acfb5411ec, type: 3}

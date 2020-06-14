@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: ad317f62f7e47104e8ba7130066e0db1
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Cyber Princess
+  fontNames:
+  - Cyber Princess
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 54788b7d86947af4389abe172242a4a8, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

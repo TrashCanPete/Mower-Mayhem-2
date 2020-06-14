@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: cdb435e3e7fde204688b1da6fa47f04f
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Chivo
+  fontNames:
+  - Chivo
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 08da411eb0569b54cbc557a17b0a1874, type: 3}
+  - {fileID: 12800000, guid: 0a3c4a7f2300e7348ae50219581868e4, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
