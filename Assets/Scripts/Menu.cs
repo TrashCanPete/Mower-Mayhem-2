@@ -15,6 +15,7 @@ public class Menu : MonoBehaviour
     public GameObject titleGroup;
     public GameObject controlsGroup;
     public GameObject creditsGroup;
+    public GameObject darkBG;
 
 
     private void Start()
@@ -96,6 +97,7 @@ public class Menu : MonoBehaviour
     public IEnumerator SwitchScoresGroupOn()
     {
         yield return new WaitForSeconds(5f);
+        darkBG.SetActive(true);
         titleGroup.SetActive(false);
         highScoresGroup.SetActive(true);
         StartCoroutine(SwitchOffScoresGroup());
@@ -104,6 +106,7 @@ public class Menu : MonoBehaviour
     public IEnumerator SwitchOffScoresGroup()
     {
         yield return new WaitForSeconds(9.9f);
+        darkBG.SetActive(false);
         highScoresGroup.SetActive(false);
         StartCoroutine(SwitchControlsOn());
     }
@@ -111,6 +114,7 @@ public class Menu : MonoBehaviour
     public IEnumerator SwitchControlsOn()
     {
         yield return new WaitForSeconds(3f);
+        darkBG.SetActive(true);
         controlsGroup.SetActive(true);
         StartCoroutine(SwitchCreditsOn());
     }
@@ -126,6 +130,7 @@ public class Menu : MonoBehaviour
     public IEnumerator SwitchTitleOn()
     {
         yield return new WaitForSeconds(6.5f);
+        darkBG.SetActive(false);
         titleGroup.SetActive(true);
         creditsGroup.SetActive(false);
         StartCoroutine(SwitchTitleOff());
