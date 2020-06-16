@@ -9,8 +9,12 @@ public class PickUp : MonoBehaviour
     [SerializeField]
     private int addedTime;
     public int scoreAdd;
+    public LongGrassEffect longGrassCut;
     [Tooltip("This will be set automatically if a parent object contains the AreaSetter Script")] public AreaSetter area;
-
+    private void Start()
+    {
+        longGrassCut = GetComponent<LongGrassEffect>();
+    }
     private void Awake()
     {
         if (area == null)
@@ -25,6 +29,7 @@ public class PickUp : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            LongGrassEffect.longGrassCut = true;
             Score.Points += scoreAdd;
             BonusDisplay.ShowBonus("Cut Weeds", scoreAdd);
             Timer.timeRemaining += addedTime;
@@ -33,4 +38,5 @@ public class PickUp : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
 }

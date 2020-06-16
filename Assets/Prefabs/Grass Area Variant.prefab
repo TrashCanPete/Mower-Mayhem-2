@@ -152,6 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   areaName: Default Area
   bonusPoints: 1000
+  bonusTime: 10
   grass: []
   grassCount: 0
   touchingPlayer: 0
@@ -162,11 +163,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1463319727293835833}
     m_Modifications:
-    - target: {fileID: 6451812631166917875, guid: 73321d558dcb813478cfe5a3888adea5,
-        type: 3}
-      propertyPath: m_Name
-      value: Long Grass
-      objectReference: {fileID: 0}
     - target: {fileID: 169504839744612947, guid: 73321d558dcb813478cfe5a3888adea5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -221,6 +217,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451812631166917875, guid: 73321d558dcb813478cfe5a3888adea5,
+        type: 3}
+      propertyPath: m_Name
+      value: Long Grass
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73321d558dcb813478cfe5a3888adea5, type: 3}

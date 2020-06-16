@@ -39,29 +39,41 @@ public class AnalyticsController : MonoBehaviour
     }
     public void SendName(string playerName)
     {
+#if !UNITY_EDITOR
         //tracking player name at end of game
         GameAnalytics.NewDesignEvent(playerName);
+#endif
     }
     public void CharacterID(int characterNumber)
     {
+#if !UNITY_EDITOR
         //tracking what character was used
         GameAnalytics.NewResourceEvent(GAResourceFlowType.Source, "Character", characterNumber, "Player_Name", "Player_ID");
+#endif
     }
     public void TotalApplicationTime()
     {
+#if !UNITY_EDITOR
         GameAnalytics.NewResourceEvent(GAResourceFlowType.Source, "TimeOpened", Time.time, "Game_Time", "ApplicationTime_Total");
+#endif
     }
     public void TotalGameTime()
     {
+#if !UNITY_EDITOR
         GameAnalytics.NewResourceEvent(GAResourceFlowType.Source, "GameTime", Time.timeSinceLevelLoad, "Game_Time", "LevelTime_Total");
+#endif
     }
     public void RestartGame()
     {
+#if !UNITY_EDITOR
         GameAnalytics.NewDesignEvent("RestartGame");
+#endif
     }
     public void ExitGame()
     {
+#if !UNITY_EDITOR
         GameAnalytics.NewDesignEvent("ExitGame");
+#endif
     }
 
 }
