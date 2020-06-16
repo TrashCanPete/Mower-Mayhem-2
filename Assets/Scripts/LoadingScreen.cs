@@ -5,34 +5,43 @@ using UnityEngine.SceneManagement;
 
 public class LoadingScreen : MonoBehaviour
 {
-
     public GameObject loadingText;
     public GameObject pressAnyButton;
     public GameObject loadingCanvas;
 
-    private bool playerCanPlay;
-
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(PressToPlay());
-        playerCanPlay = false;
+       StartCoroutine(LoadScene());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (playerCanPlay == true && (Input.anyKey))
-        {
-            SceneManager.LoadScene(3);
-        }
+    
     }
 
-    public IEnumerator PressToPlay()
+    IEnumerator LoadScene()
     {
-        yield return new WaitForSeconds(5f);
-        loadingText.SetActive(false);
-        pressAnyButton.SetActive(true);
-        playerCanPlay = true;
+        yield return new WaitForSeconds(3);
+
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(3);
+        asyncOperation.allowSceneActivation = false;
+
+        while (!asyncOperation.isDone)
+        {
+            if (asyncOperation.progress >= 0.9f)
+            {
+                loadingText.SetActive(false);
+                pressAnyButton.SetActive(true);
+
+                if (Input.anyKey)
+                {
+                    asyncOperation.allowSceneActivation = true;
+                }
+            }
+
+            yield return null;
+        }
     }
 }
