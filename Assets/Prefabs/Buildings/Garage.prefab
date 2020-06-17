@@ -162,6 +162,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8520416638314394318}
+  - component: {fileID: 8137207939014150726}
   m_Layer: 0
   m_Name: Garage
   m_TagString: Obstacle
@@ -186,6 +187,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 169.56201, z: 0}
+--- !u!65 &8137207939014150726
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4640326178754281693}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.08621473, y: 0.07566236, z: 0.1162568}
+  m_Center: {x: -0.0021168215, y: 0.037212685, z: 0.010993704}
 --- !u!1 &4770573038012607908
 GameObject:
   m_ObjectHideFlags: 0
