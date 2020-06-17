@@ -7,11 +7,18 @@ public class ReverseCam : MonoBehaviour
     [SerializeField] Driving driving = null;
     [SerializeField] LerpToPos cameraLerp;
     bool flipped = false;
+    const float speedThreshhold = 6;
     private void Update()
     {
-        if (driving.Reversing !=flipped)
+        if (driving.Reversing&&!flipped)
         {
-            Flip();
+            if (driving.Speed < -speedThreshhold)
+                Flip();
+        }
+        if (!driving.Reversing&&flipped)
+        {
+            if (driving.Speed > -speedThreshhold)
+                Flip();
         }
     }
     void Flip()

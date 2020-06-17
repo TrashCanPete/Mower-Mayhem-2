@@ -44,6 +44,7 @@ public class Driving : MonoBehaviour
     public bool Reversing { get; private set; }
     public bool IsGrounded { get; private set; }
     public bool IsDrifting { get; private set; }
+    public float Speed { get; private set; }
     float zAxis;
     bool handbraking = false;
     Rigidbody rb;
@@ -105,6 +106,7 @@ public class Driving : MonoBehaviour
             ApplyBrake(handbrakePower, true);
         }
         ApplyGrip();
+        Speed = transform.InverseTransformVector(rb.velocity).z;
     }
     void ApplyGrip()
     {

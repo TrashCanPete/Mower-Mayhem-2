@@ -9,6 +9,8 @@ public class Animations : MonoBehaviour
     public Animator anim;
     private Driving driving;
     private Steering steering;
+    const float cooldown = 0.1f;
+    bool canCrash = true;
 
     // Start is called before the first frame update
     void Start()
@@ -90,15 +92,23 @@ public class Animations : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        if (collision.gameObject.tag == "Obstacle" && driving.Reversing == false)
+        if(collision.gameObject.tag == "Obstacle" && canCrash&&Mathf.Abs(driving.Speed)>6)
         {
-            anim.SetTrigger("Crashing");
-        }
-        else if (collision.gameObject.tag == "Obstacle" && driving.Reversing == true)
-        {
-            anim.SetTrigger("Reverse Crashing");
+            if (driving.Reversing)
+            {
+                anim.SetTrigger("Reverse Crashing");
+            }
+            else
+            {
+                anim.SetTrigger("Crashing");
+            }
+            canCrash = false;
+            StartCoroutine(CrashCooldown());
         }
     }
-
+    IEnumerator CrashCooldown()
+    {
+        yield return new WaitForSeconds(cooldown);
+        canCrash = true;
+    }
 }
