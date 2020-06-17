@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -665,6 +665,10 @@ PrefabInstance:
       propertyPath: m_Volume
       value: 0.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2057689875, guid: 47271da4ff97bb24eba190d158b531ef, type: 3}
+      propertyPath: replace
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47271da4ff97bb24eba190d158b531ef, type: 3}
 --- !u!1 &2098621321 stripped
@@ -696,6 +700,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LoadingScreenCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385940665073531822, guid: 3da09ea74564e2d4b921f2c598ffc607,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2709066936351448787, guid: 3da09ea74564e2d4b921f2c598ffc607,
         type: 3}
@@ -986,11 +995,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1385940665073531822, guid: 3da09ea74564e2d4b921f2c598ffc607,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2889788201931656015, guid: 3da09ea74564e2d4b921f2c598ffc607,
         type: 3}
