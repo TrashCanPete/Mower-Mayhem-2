@@ -13,7 +13,7 @@ public class ImpactPoints : MonoBehaviour
         if (collision.collider.tag == "Player"&&!hit)
         {
             Score.Points += points;
-            BonusDisplay.ShowBonus(text, points, displayTime);
+            BonusDisplay.ShowBonus(ScoreTypes.Destruction, "Destruction", points);
             hit = true;
         }
     }

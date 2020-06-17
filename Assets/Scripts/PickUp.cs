@@ -31,7 +31,7 @@ public class PickUp : MonoBehaviour
         {
             LongGrassEffect.longGrassCut = true;
             Score.Points += scoreAdd;
-            BonusDisplay.ShowBonus("Cut Weeds", scoreAdd);
+            BonusDisplay.ShowBonus(ScoreTypes.CutWeeds, "Cut Weeds", scoreAdd);
             Timer.timeRemaining += addedTime;
             if (area != null)
                 area.RemoveObj(gameObject);

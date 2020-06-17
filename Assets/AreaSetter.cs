@@ -14,7 +14,7 @@ public class AreaSetter : MonoBehaviour
     {
         grass.Clear();
         PickUp[] pickups = GetComponentsInChildren<PickUp>();
-        for(int i = 0; i < pickups.Length; i++)
+        for (int i = 0; i < pickups.Length; i++)
         {
             grass.Add(pickups[i].gameObject);
         }
@@ -28,15 +28,16 @@ public class AreaSetter : MonoBehaviour
         {
             Cleared();
         }
-            
+
         AreaDisplay.UpdateText();
     }
     public virtual void Cleared()
     {
         Score.Points += bonusPoints;
         Timer.timeRemaining += bonusTime;
-        Notifications.SendNotification("+" + bonusTime + " seconds!");
-        BonusDisplay.ShowBonus("Cleared " + areaName, bonusPoints, bonusTime);
+        Notifications.SendNotification("Cleared " + areaName + " +" + bonusTime + " seconds!");
+        BonusDisplay.ShowBonus(ScoreTypes.ClearedArea, "Cleared " + areaName, bonusPoints);
+        Destroy(gameObject);
     }
     public void AddObj(GameObject g)
     {
@@ -49,7 +50,7 @@ public class AreaSetter : MonoBehaviour
     }
     private void LateUpdate()
     {
-        if (touchingPlayer&&!contained)
+        if (touchingPlayer && !contained)
         {
             AddSelf();
         }

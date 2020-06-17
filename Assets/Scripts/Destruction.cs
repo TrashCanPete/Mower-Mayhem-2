@@ -34,7 +34,8 @@ public class Destruction : MonoBehaviour
     {
         hit = true;
         Score.Points += points;
-        BonusDisplay.ShowBonus("Destruction", points,displayTime);
+        //BonusDisplay.ShowBonus("Destruction", points,displayTime);
+        BonusDisplay.ShowBonus(ScoreTypes.Destruction, "Destruction", points);
         Instantiate(piece1, transform.position, transform.rotation);
         if (destroyObject == true)
         {

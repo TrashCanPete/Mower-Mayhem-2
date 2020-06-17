@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2272598924062122350}
+  - component: {fileID: 7621898657260162530}
   m_Layer: 5
   m_Name: Bonus Obj
   m_TagString: Untagged
@@ -37,6 +38,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 60}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &7621898657260162530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2363223578097351375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df9d957c6f3d08b448014bea4359f47c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4559669510483091943
 GameObject:
   m_ObjectHideFlags: 0

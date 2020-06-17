@@ -29,6 +29,7 @@ public class Notifications : MonoBehaviour
     IEnumerator HideText()
     {
         yield return new WaitForSeconds(waitTime);
+        text.text = "";
         text.enabled = false;
     }
 }

@@ -10,7 +10,7 @@ public class AreaSetterWBehavior : AreaSetter
     {
         Score.Points += bonusPoints;
         Timer.timeRemaining += bonusTime;
-        BonusDisplay.ShowBonus("Cleared " + areaName, bonusPoints);
+        BonusDisplay.ShowBonus(ScoreTypes.ClearedArea, "Cleared " + areaName, bonusPoints);
         if (OnComplete.GetPersistentEventCount() > 0)
             OnComplete.Invoke();
         Notifications.SendNotification(notif);
