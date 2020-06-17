@@ -41,7 +41,7 @@ public class AnalyticsController : MonoBehaviour
     {
 #if !UNITY_EDITOR
         //tracking player name at end of game
-        GameAnalytics.NewDesignEvent(playerName);
+        GameAnalytics.NewDesignEvent(playerName, Score.Points);
 #endif
     }
     public void CharacterID(int characterNumber)
@@ -63,16 +63,16 @@ public class AnalyticsController : MonoBehaviour
         GameAnalytics.NewResourceEvent(GAResourceFlowType.Source, "GameTime", Time.timeSinceLevelLoad, "Game_Time", "LevelTime_Total");
 #endif
     }
-    public void RestartGame()
+    public void RestartGame(string playerName)
     {
 #if !UNITY_EDITOR
-        GameAnalytics.NewDesignEvent("RestartGame");
+        GameAnalytics.NewDesignEvent("RestartGame:playerName ");
 #endif
     }
-    public void ExitGame()
+    public void ExitGame(float totalTime)
     {
 #if !UNITY_EDITOR
-        GameAnalytics.NewDesignEvent("ExitGame");
+        GameAnalytics.NewDesignEvent("ExitGame:", totalTime);
 #endif
     }
 

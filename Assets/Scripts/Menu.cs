@@ -82,7 +82,7 @@ public class Menu : MonoBehaviour
     public void ExitScene()
     {
         AnalyticsController.Controller.TotalApplicationTime();
-        AnalyticsController.Controller.ExitGame();
+        AnalyticsController.Controller.ExitGame(Time.time);
 
         Application.Quit();
     }
