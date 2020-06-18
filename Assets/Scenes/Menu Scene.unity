@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -4489,12 +4489,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 116497264, guid: 994d60e08270bc44d84e15b39c82ff67, type: 3}
+    - target: {fileID: 6848283123112608480, guid: 994d60e08270bc44d84e15b39c82ff67,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6848283123112608480, guid: 994d60e08270bc44d84e15b39c82ff67,
-        type: 3}
+    - target: {fileID: 116497264, guid: 994d60e08270bc44d84e15b39c82ff67, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -5394,6 +5394,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: b35f41150aedb4b4fadfc7751ada1482, type: 3}
+    - target: {fileID: 2057689875, guid: 47271da4ff97bb24eba190d158b531ef, type: 3}
+      propertyPath: replace
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47271da4ff97bb24eba190d158b531ef, type: 3}
 --- !u!1 &2091980857
