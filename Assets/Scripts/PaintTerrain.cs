@@ -18,11 +18,15 @@ public class PaintTerrain : MonoBehaviour
     Vector3 distSinceUpdate;
     float localScore = 0;
     public bool isPainting = false;
+    AudioSource audioSource;
     //float[] textureValues = new float[2];
-
+    const float maxVol = 0.2f;
     private void Start()
     {
         StartCoroutine(Check());
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource != null)
+            audioSource.volume = 0;
     }
     private IEnumerator Check()
     {
@@ -38,15 +42,15 @@ public class PaintTerrain : MonoBehaviour
                     {
                         if (hit.transform.gameObject.GetComponent<Terrain>() != null)
                         {
-                           GetTerrain(hit.transform.gameObject);
+                            GetTerrain(hit.transform.gameObject);
                         }
                     }
-                    
-                    Paint(transform.position,mainMap);
+
+                    Paint(transform.position, mainMap);
                     UpdateScore();
                 }
             }
-            yield return new WaitForSeconds(1 /60); 
+            yield return new WaitForSeconds(1 / 60);
         }
     }
     private void OnValidate()
@@ -65,7 +69,7 @@ public class PaintTerrain : MonoBehaviour
         Debug.Log("New Terrain here");
         t = obj.GetComponent<Terrain>();
         width = (int)(size * t.terrainData.alphamapWidth / t.terrainData.size.x);
-        height =(int)(size * t.terrainData.alphamapHeight / t.terrainData.size.x);
+        height = (int)(size * t.terrainData.alphamapHeight / t.terrainData.size.x);
         //int width = 7;
         //int height = 7;
         float[,,] map = new float[width, height, t.terrainData.terrainLayers.Length];
@@ -73,7 +77,7 @@ public class PaintTerrain : MonoBehaviour
         currentTerrain = obj;
         mainMap = map;
     }
-    float [,,] SetMap(float[,,] map)
+    float[,,] SetMap(float[,,] map)
     {
         for (int y = 0; y < height; y++)
         {
@@ -85,22 +89,29 @@ public class PaintTerrain : MonoBehaviour
         }
         return map;
     }
-    
-    void Paint(Vector3 position,float[,,] map)
+
+    void Paint(Vector3 position, float[,,] map)
     {
-        Vector3 checkingPos = GetPos(transform.position+distSinceUpdate);
-        bool[] paintAndScore =CheckTexture(checkingPos);
+        Vector3 checkingPos = GetPos(transform.position + distSinceUpdate);
+        bool[] paintAndScore = CheckTexture(checkingPos);
         Vector3 offset = new Vector3(size / 2, 0, size / 2);
-        Vector3 pos = GetPos(position,offset);
+        Vector3 pos = GetPos(position, offset);
         if (paintAndScore[1])
         {
             localScore += 1f * Vector3.Distance(transform.position, prevPos) * scoreMultiplier;
             isPainting = true;
-        }  
+            if (audioSource != null)
+                audioSource.volume =Mathf.Clamp(audioSource.volume+( 2 * Time.deltaTime),0,maxVol);
+        }
+        else
+        {
+            if (audioSource != null)
+                audioSource.volume -= 1 * Time.deltaTime;
+        }
         if (paintAndScore[0])
             t.terrainData.SetAlphamaps((int)pos.x, (int)pos.z, map);
         distSinceUpdate = (transform.position - prevPos).normalized;
-        Debug.DrawLine(transform.position, transform.position + distSinceUpdate,Color.red, 1f / 60f);
+        Debug.DrawLine(transform.position, transform.position + distSinceUpdate, Color.red, 1f / 60f);
         prevPos = transform.position;
     }
     void UpdateScore()
@@ -110,15 +121,15 @@ public class PaintTerrain : MonoBehaviour
         localScore -= add;
         Score.Points += add;
     }
-    Vector3 GetPos(Vector3 position,Vector3 offset)
+    Vector3 GetPos(Vector3 position, Vector3 offset)
     {
-        Vector3 pos = (position-offset) - t.GetPosition();
+        Vector3 pos = (position - offset) - t.GetPosition();
         pos.x = pos.x / t.terrainData.size.x;
         pos.z = pos.z / t.terrainData.size.z;
         pos.x = pos.x * t.terrainData.alphamapWidth;
         pos.z = pos.z * t.terrainData.alphamapHeight;
-        pos.x = Mathf.Clamp(pos.x, 0, t.terrainData.alphamapWidth-width);
-        pos.z = Mathf.Clamp(pos.z, 0, t.terrainData.alphamapHeight-height);
+        pos.x = Mathf.Clamp(pos.x, 0, t.terrainData.alphamapWidth - width);
+        pos.z = Mathf.Clamp(pos.z, 0, t.terrainData.alphamapHeight - height);
         return pos;
     }
     Vector3 GetPos(Vector3 position)
@@ -136,18 +147,18 @@ public class PaintTerrain : MonoBehaviour
     {
         float[,,] aMap = t.terrainData.GetAlphamaps((int)position.x, (int)position.z, 1, 1);
         float[] textureValues = new float[aMap.GetLength(2)];
-        for (int i=0;  i < aMap.GetLength(2); i++)
+        for (int i = 0; i < aMap.GetLength(2); i++)
         {
             textureValues[i] = aMap[0, 0, i];
 
         }
         bool paint = false;
         bool score = false;
-        if (textureValues[1] >threshhold)
+        if (textureValues[1] > threshhold)
         {
             score = true;
         }
-        if(textureValues[1] > threshhold|| textureValues[0] > threshhold)
+        if (textureValues[1] > threshhold || textureValues[0] > threshhold)
         {
             paint = true;
         }

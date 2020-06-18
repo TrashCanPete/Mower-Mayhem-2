@@ -10,6 +10,7 @@ public class PickUp : MonoBehaviour
     private int addedTime;
     public int scoreAdd;
     public LongGrassEffect longGrassCut;
+    public GameObject effect;
     [Tooltip("This will be set automatically if a parent object contains the AreaSetter Script")] public AreaSetter area;
     private void Start()
     {
@@ -35,6 +36,8 @@ public class PickUp : MonoBehaviour
             Timer.timeRemaining += addedTime;
             if (area != null)
                 area.RemoveObj(gameObject);
+            if (effect != null)
+                Instantiate(effect, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

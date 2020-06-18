@@ -169,8 +169,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpType: 0
-  addedTime: 1
+  addedTime: 0
   scoreAdd: 25
+  longGrassCut: {fileID: 0}
+  effect: {fileID: 8896407664318058216, guid: 0e12d1d35476b4c4ab8d26254a40f682, type: 3}
   area: {fileID: 0}
 --- !u!1 &7596587548355845062
 GameObject:
