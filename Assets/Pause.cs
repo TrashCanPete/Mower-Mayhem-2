@@ -26,9 +26,11 @@ public class Pause : MonoBehaviour
         }
 
         pause = isPaused;
-        if (Input.GetButtonDown("Cancel") && SceneManager.GetSceneByName("Main Level").isLoaded)
+        if (Input.GetButtonDown("Restart") && SceneManager.GetSceneByName("Main Level").isLoaded)
         {
-            isPaused = !isPaused;
+            SceneManager.LoadScene(0);
+
+            /*isPaused = !isPaused;
             if (isPaused == true)
             {
                 Time.timeScale = 0;
@@ -39,7 +41,7 @@ public class Pause : MonoBehaviour
             {
                 Time.timeScale = 1;
                 pauseObj.SetActive(false);
-            }
+            }*/
         }
         /*if (canPauseGame == false)
         {
