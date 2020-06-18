@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 public class AreaSetter : MonoBehaviour
 {
+    public static int areasCleared;
     public string areaName;
     public int bonusPoints;
     public int bonusTime;
@@ -35,6 +36,7 @@ public class AreaSetter : MonoBehaviour
     {
         Score.Points += bonusPoints;
         Timer.timeRemaining += bonusTime;
+        areasCleared++;
         Notifications.SendNotification("Cleared " + areaName + " +" + bonusTime + " seconds!");
         BonusDisplay.ShowBonus(ScoreTypes.ClearedArea, "Cleared " + areaName, bonusPoints);
         Destroy(gameObject);

@@ -76,6 +76,7 @@ public class Menu : MonoBehaviour
     }
     public void LoadMainMenu()
     {
+        AreaSetter.areasCleared = 0;
         //dontDestroy.setActiveCanvas = true;
         SceneManager.LoadScene(0);
     }

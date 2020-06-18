@@ -19,7 +19,7 @@ public class TakeScore : MonoBehaviour
     {
 #if !UNITY_EDITOR
         AnalyticsController.Controller.SendScore();
-        AnalyticsController.Controller.SendName(text.text);
+        AnalyticsController.Controller.SendName(text.text, Time.time);
         AnalyticsController.Controller.CharacterID(characterNumber);
 #endif
         //SceneManager.LoadScene(0);

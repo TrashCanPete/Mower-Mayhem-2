@@ -37,11 +37,13 @@ public class AnalyticsController : MonoBehaviour
         GameAnalytics.NewResourceEvent(GAResourceFlowType.Source, "Points", Score.Points, "Mowed_Grass", "score_ID");
 #endif
     }
-    public void SendName(string playerName)
+    public void SendName(string playerName, float totalTime)
     {
 #if !UNITY_EDITOR
         //tracking player name at end of game
-        GameAnalytics.NewDesignEvent(playerName, Score.Points);
+        GameAnalytics.NewDesignEvent("playerName:Score", Score.Points);
+        GameAnalytics.NewDesignEvent("playerName:TotalAreasCleared", AreaSetter.areasCleared);
+        GameAnalytics.NewDesignEvent("playerName:TotalTime", totalTime);
 #endif
     }
     public void CharacterID(int characterNumber)
@@ -73,6 +75,7 @@ public class AnalyticsController : MonoBehaviour
     {
 #if !UNITY_EDITOR
         GameAnalytics.NewDesignEvent("ExitGame:", totalTime);
+        GameAnalytics.NewDesignEvent("ExitGame:TotalAreasCleared", AreaSetter.areasCleared);
 #endif
     }
 
