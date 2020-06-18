@@ -20,7 +20,7 @@ public class PaintTerrain : MonoBehaviour
     public bool isPainting = false;
     AudioSource audioSource;
     //float[] textureValues = new float[2];
-    const float maxVol = 0.2f;
+    const float maxVol = 0.15f;
     private void Start()
     {
         StartCoroutine(Check());

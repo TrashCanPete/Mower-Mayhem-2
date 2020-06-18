@@ -2664,8 +2664,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3609c1b92522eed4b9a027a124c82451, type: 2}
-  m_sharedMaterial: {fileID: 4175687337014781248, guid: 3609c1b92522eed4b9a027a124c82451,
+  m_fontAsset: {fileID: 11400000, guid: 635a360b49cf8ce4f9496f30cb109980, type: 2}
+  m_sharedMaterial: {fileID: -501302293528991705, guid: 635a360b49cf8ce4f9496f30cb109980,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -3810,7 +3810,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3906,7 +3906,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 60696c208bed0fb408d3622c248a53a3, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4182,7 +4182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseObj: {fileID: 248657037}
-  canPauseGame: 0
+  pause: 0
 --- !u!1001 &2680234156351553838
 PrefabInstance:
   m_ObjectHideFlags: 0
