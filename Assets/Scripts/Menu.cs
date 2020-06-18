@@ -29,9 +29,12 @@ public class Menu : MonoBehaviour
 
     private void Update()
     {
-        if (SceneManager.GetSceneByName("Menu Scene").isLoaded && (Input.anyKey))
+        if (SceneManager.GetSceneByName("Menu Scene").isLoaded)
         {
-            LoadScene(1);
+            if (Input.anyKey)
+            {
+                LoadScene(1);
+            }
             if (Input.GetButtonDown("Cancel"))
             {
                 ExitScene();
@@ -76,6 +79,7 @@ public class Menu : MonoBehaviour
     }
     public void LoadMainMenu()
     {
+        Pause.canPauseGame = false;
         AreaSetter.areasCleared = 0;
         //dontDestroy.setActiveCanvas = true;
         SceneManager.LoadScene(0);

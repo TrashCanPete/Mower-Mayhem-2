@@ -31,6 +31,7 @@ public class Countdown : MonoBehaviour
         }
         audioSource.PlayOneShot(audioClips[audioClips.Length-1]);
         GameEvents.Instance.GameStart.Invoke();
+        //Pause.canPauseGame = true;
         text.fontSize = text.fontSize - 20;
         text.text = "MOW!";
         yield return new WaitForSeconds(1);

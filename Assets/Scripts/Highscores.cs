@@ -32,6 +32,7 @@ public class Highscores : MonoBehaviour
         }*/
         instance = this;
         highscoresDisplay = GetComponent<DisplayHighscores>();
+
     }
     public static void AddNewHighscore(string username, int score)
     {

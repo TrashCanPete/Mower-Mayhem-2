@@ -10,6 +10,7 @@ public class TakeScore : MonoBehaviour
 {
     private int characterNumber;
     public TextMeshProUGUI text;
+
     private void Start()
     {
         characterNumber = CharacterSelectCam.characterIndex +=1;
