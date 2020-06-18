@@ -38,7 +38,7 @@ public class Restart : MonoBehaviour
     {
         if (Input.GetButtonDown("Restart"))
         {
-            AnalyticsController.Controller.RestartGame();
+            AnalyticsController.Controller.RestartGame("");
             SceneManager.LoadScene(0);
         }
     }
