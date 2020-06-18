@@ -432,7 +432,7 @@ MonoBehaviour:
   m_material: {fileID: 0}
   m_sharedMaterial: {fileID: 0}
   m_isDefaultMaterial: 0
-  m_padding: 0
+  m_padding: 7.3339996
   m_canvasRenderer: {fileID: 577006927}
   m_TextComponent: {fileID: 1102252062}
   m_materialReferenceIndex: 1
@@ -1349,8 +1349,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: c6e62ff4b14071746949150b465cf679, type: 2}
-  m_sharedMaterial: {fileID: -7182976860880690176, guid: c6e62ff4b14071746949150b465cf679,
+  m_fontAsset: {fileID: 11400000, guid: 6c208a3182a64e648b637c577425b5a6, type: 2}
+  m_sharedMaterial: {fileID: 2164562488799636660, guid: 6c208a3182a64e648b637c577425b5a6,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
