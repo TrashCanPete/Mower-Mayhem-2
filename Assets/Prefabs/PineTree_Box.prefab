@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8152382999132680677}
+  - component: {fileID: 3006345795303062712}
   m_Layer: 0
   m_Name: PineTree_Box
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3006345795303062712
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4529356103687568872}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &5474664823672001712
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39,30 +53,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8152382999132680677}
     m_Modifications:
-    - target: {fileID: 1516620843158332149, guid: ade6e6bafc785254baf8042d8dd1390a,
-        type: 3}
-      propertyPath: m_Name
-      value: PineTree (74)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1516620843158332149, guid: ade6e6bafc785254baf8042d8dd1390a,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 621479790601955091, guid: ade6e6bafc785254baf8042d8dd1390a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 210.68
+      value: 105.9
       objectReference: {fileID: 0}
     - target: {fileID: 621479790601955091, guid: ade6e6bafc785254baf8042d8dd1390a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 621479790601955091, guid: ade6e6bafc785254baf8042d8dd1390a,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 337.96
+      value: 185.9
       objectReference: {fileID: 0}
     - target: {fileID: 621479790601955091, guid: ade6e6bafc785254baf8042d8dd1390a,
         type: 3}
@@ -104,6 +108,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1516620843158332149, guid: ade6e6bafc785254baf8042d8dd1390a,
+        type: 3}
+      propertyPath: m_Name
+      value: PineTree (74)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1516620843158332149, guid: ade6e6bafc785254baf8042d8dd1390a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2916787806480284864, guid: ade6e6bafc785254baf8042d8dd1390a,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -129,25 +143,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8152382999132680677}
     m_Modifications:
-    - target: {fileID: 8781428252976943060, guid: 54e456e86d85b1f48814c63db9abf364,
-        type: 3}
-      propertyPath: m_Name
-      value: TreeBox (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 2903133242149579544, guid: 54e456e86d85b1f48814c63db9abf364,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 128.4818
+      value: 23.701797
       objectReference: {fileID: 0}
     - target: {fileID: 2903133242149579544, guid: 54e456e86d85b1f48814c63db9abf364,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.676
+      value: -0.324
       objectReference: {fileID: 0}
     - target: {fileID: 2903133242149579544, guid: 54e456e86d85b1f48814c63db9abf364,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 194.57199
+      value: 42.511993
       objectReference: {fileID: 0}
     - target: {fileID: 2903133242149579544, guid: 54e456e86d85b1f48814c63db9abf364,
         type: 3}
@@ -198,6 +207,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.20000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 8781428252976943060, guid: 54e456e86d85b1f48814c63db9abf364,
+        type: 3}
+      propertyPath: m_Name
+      value: TreeBox (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e456e86d85b1f48814c63db9abf364, type: 3}
