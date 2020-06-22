@@ -9,6 +9,7 @@ public class AnalyticsController : MonoBehaviour
     public static AnalyticsController Controller;
     public bool replace = false;
     public bool persist = true;
+    public string test;
     void Start()
     {
         if (persist)

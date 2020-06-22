@@ -437,8 +437,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1560087, y: 1.0964274, z: 4.3073263}
-  m_Center: {x: 0.011371136, y: 0.24319291, z: 0.46158266}
+  m_Size: {x: 1.45, y: 1.0964274, z: 4.3073263}
+  m_Center: {x: 0.06, y: 0.24319291, z: 0.46158266}
 --- !u!114 &2478265560390288283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,16 +1115,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
-        type: 3}
-      propertyPath: driftMaintain
-      value: 0.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
-        type: 3}
-      propertyPath: visualWheel
-      value: 
-      objectReference: {fileID: 5779535474979599514}
     - target: {fileID: 6971363007171891569, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
         type: 3}
       propertyPath: m_IsActive
@@ -1155,16 +1145,26 @@ PrefabInstance:
       propertyPath: m_AngularYMotion
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6971363008540548279, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6971363008540548278, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
         type: 3}
       propertyPath: m_Radius
       value: 0.52
       objectReference: {fileID: 0}
+    - target: {fileID: 6971363008540548279, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
+        type: 3}
+      propertyPath: driftMaintain
+      value: 0.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
+        type: 3}
+      propertyPath: visualWheel
+      value: 
+      objectReference: {fileID: 5779535474979599514}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b37d2d48f613c449b6fb8a567d5a0f9, type: 3}
 --- !u!4 &7912981889429145629 stripped
@@ -1522,16 +1522,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
-        type: 3}
-      propertyPath: driftMaintain
-      value: 0.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
-        type: 3}
-      propertyPath: visualWheel
-      value: 
-      objectReference: {fileID: 7261981053338487552}
     - target: {fileID: 6971363007171891569, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
         type: 3}
       propertyPath: m_IsActive
@@ -1562,16 +1552,26 @@ PrefabInstance:
       propertyPath: m_AngularYMotion
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6971363008540548279, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 6971363008540548278, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
         type: 3}
       propertyPath: m_Radius
       value: 0.52
       objectReference: {fileID: 0}
+    - target: {fileID: 6971363008540548279, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
+        type: 3}
+      propertyPath: driftMaintain
+      value: 0.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
+        type: 3}
+      propertyPath: visualWheel
+      value: 
+      objectReference: {fileID: 7261981053338487552}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b37d2d48f613c449b6fb8a567d5a0f9, type: 3}
 --- !u!4 &2897764653806227220 stripped
@@ -2046,16 +2046,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.3614
       objectReference: {fileID: 0}
-    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
-        type: 3}
-      propertyPath: driftMaintain
-      value: 0.99
-      objectReference: {fileID: 0}
-    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
-        type: 3}
-      propertyPath: visualWheel
-      value: 
-      objectReference: {fileID: 3381817327844784408}
     - target: {fileID: 6971363007171891569, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
         type: 3}
       propertyPath: m_IsActive
@@ -2086,6 +2076,16 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.31
       objectReference: {fileID: 0}
+    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
+        type: 3}
+      propertyPath: driftMaintain
+      value: 0.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 6971363008540548273, guid: 9b37d2d48f613c449b6fb8a567d5a0f9,
+        type: 3}
+      propertyPath: visualWheel
+      value: 
+      objectReference: {fileID: 3381817327844784408}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b37d2d48f613c449b6fb8a567d5a0f9, type: 3}
 --- !u!4 &815639352013110341 stripped
