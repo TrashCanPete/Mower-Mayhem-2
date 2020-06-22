@@ -59,6 +59,7 @@ public class CharacterSelectCam : MonoBehaviour
                 if (OnSelect.GetPersistentEventCount() > 0)
                     OnSelect.Invoke();
                 menu.SelectCharacter();
+                AnalyticsController.Controller.CharacterID(characterIndex);
                 this.enabled = false;
             }
         }
