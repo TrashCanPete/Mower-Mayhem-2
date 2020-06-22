@@ -25,7 +25,7 @@ public class DisplayHighscores : MonoBehaviour
         }
         for (int i = 0; i < ScoreValueColumn.Length; i++)
         {
-            ScoreValueColumn[i].text =  ". Fetching...";
+            ScoreValueColumn[i].text = ". Fetching...";
         }
 
         highscoreManager = GetComponent<Highscores>();
@@ -45,16 +45,19 @@ public class DisplayHighscores : MonoBehaviour
         }*/
         for (int i = 0; i < ScoreNameColumn.Length; i++)
         {
-            ScoreNameColumn[i].text =  "";
+            ScoreNameColumn[i].text = "";
             if (highscoreList.Length > i)
             {
-                ScoreNameColumn[i].text += highscoreList[i].username;
+                string name = highscoreList[i].username;
+                if (name.Length > 3)
+                    name = name.Remove(3);
+                ScoreNameColumn[i].text += name;
 
             }
         }
         for (int i = 0; i < ScoreValueColumn.Length; i++)
         {
-            ScoreValueColumn[i].text =  "";
+            ScoreValueColumn[i].text = "";
             if (highscoreList.Length > i)
             {
                 ScoreValueColumn[i].text += highscoreList[i].score;

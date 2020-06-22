@@ -38,19 +38,40 @@ public class Highscores : MonoBehaviour
     {
         instance.StartCoroutine(instance.UploadNewHighscore(username, score));
     }
-    IEnumerator UploadNewHighscore(string username, int score)
+    IEnumerator UploadNewHighscore(string name, int score)
     {
-        UnityWebRequest www = new UnityWebRequest(webURL + privateCode + "/add/" + UnityWebRequest.EscapeURL(username) + "/" + score);
+        int nameSuffix = 0;
+        string targetName = name;
+        UnityWebRequest www = new UnityWebRequest(webURL + publicCode + "/pipe/");
+        www.downloadHandler = new DownloadHandlerBuffer();
         yield return www.SendWebRequest();
+        string textStream = www.downloadHandler.text;
 
-        if (string.IsNullOrEmpty(www.error))
+        string[] entries = textStream.Split(new char[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
+        highscoresList = new Highscore[entries.Length];
+        for (int i = 0; i < entries.Length; i++)
+        {
+            string[] entryInfo = entries[i].Split(new char[] { '|' });
+            string username = entryInfo[0];//getting the name data in slot 0
+            if (targetName == username)
+            {
+                nameSuffix++;
+                targetName = name + nameSuffix;
+            }
+        }
+
+
+        UnityWebRequest addScoreRequest = new UnityWebRequest(webURL + privateCode + "/add/" + UnityWebRequest.EscapeURL(targetName) + "/" + score);
+        yield return addScoreRequest.SendWebRequest();
+
+        if (string.IsNullOrEmpty(addScoreRequest.error))
         {
             print("upload successful");
             DownloadHighscores();
         }
         else
         {
-            print("Error uploading: " + www.error);
+            print("Error uploading: " + addScoreRequest.error);
         }
     }
 
