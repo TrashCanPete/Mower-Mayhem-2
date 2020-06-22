@@ -51,7 +51,12 @@ public class AnalyticsController : MonoBehaviour
     {
 #if !UNITY_EDITOR
         //tracking what character was used
-        GameAnalytics.NewResourceEvent(GAResourceFlowType.Source, "Character", characterNumber, "Player_Name", "Player_ID");
+        //GameAnalytics.NewResourceEvent(GAResourceFlowType.Source, "Character", characterNumber, "Player_Name", "Player_ID");
+
+        float slashley = characterNumber == 1 ? 100:0;
+        float chip = characterNumber == 0 ? 100 : 0;
+        GameAnalytics.NewDesignEvent("Slashley pick", slashley);
+        GameAnalytics.NewDesignEvent("Chip pick", chip);
 #endif
     }
     public void TotalApplicationTime()
@@ -74,10 +79,10 @@ public class AnalyticsController : MonoBehaviour
     }
     public void ExitGame(float totalTime)
     {
-#if !UNITY_EDITOR
+//#if !UNITY_EDITOR
         GameAnalytics.NewDesignEvent("ExitGame:", totalTime);
         GameAnalytics.NewDesignEvent("ExitGame:TotalAreasCleared", AreaSetter.areasCleared);
-#endif
+//#endif
     }
 
 }

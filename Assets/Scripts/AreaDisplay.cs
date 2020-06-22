@@ -10,6 +10,8 @@ public class AreaDisplay : MonoBehaviour
 
     private void Awake()
     {
+        setters = new List<AreaSetter>();
+        area = "";
         text = GetComponent<TextMeshProUGUI>();
     }
     public static string Area
