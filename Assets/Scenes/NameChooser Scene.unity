@@ -1871,7 +1871,7 @@ PrefabInstance:
     - target: {fileID: 1910568157470961325, guid: 38eee0a25748a3f469a442836c06ee0b,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -6
       objectReference: {fileID: 0}
     - target: {fileID: 1910568157470961325, guid: 38eee0a25748a3f469a442836c06ee0b,
         type: 3}
@@ -2737,6 +2737,10 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1109699248, guid: 38eee0a25748a3f469a442836c06ee0b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 23.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 38eee0a25748a3f469a442836c06ee0b, type: 3}

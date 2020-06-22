@@ -44,11 +44,11 @@ public class CharacterSelectCam : MonoBehaviour
         var goalRotation = Quaternion.LookRotation(choice.transform.position - transform.position);
         transform.rotation = Quaternion.Lerp(currentRotation, goalRotation, 0.1f);
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) 
         {
             index++;
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
+        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) 
         {
             index--;
         }
