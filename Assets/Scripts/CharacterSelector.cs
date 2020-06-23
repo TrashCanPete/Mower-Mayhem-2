@@ -9,6 +9,7 @@ public class CharacterSelector : MonoBehaviour
     public TextMeshProUGUI output;
     public Font font;
     const string characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ&.0123456789";
+    const char back = '\u2190';
     public float offset = 40;
     int selection = 0;
     Vector3 startPos;
@@ -20,15 +21,26 @@ public class CharacterSelector : MonoBehaviour
     private void Start()
     {
         startPos = transform.position;
-        for(int i=0; i < characters.Length; i++)
+        for (int i = 0; i < characters.Length; i++)
         {
-            GameObject g = Instantiate(characterPrefab, transform.position, Quaternion.identity);
-            g.transform.position = transform.position + new Vector3(offset*i, 0, 0);
-            g.transform.parent = transform;
-            TextMeshProUGUI text = g.GetComponent<TextMeshProUGUI>();
-            text.text = characters[i].ToString();
+            /* GameObject g = Instantiate(characterPrefab, transform.position, Quaternion.identity);
+             g.transform.position = transform.position + new Vector3(offset*i, 0, 0);
+             g.transform.parent = transform;
+             TextMeshProUGUI text = g.GetComponent<TextMeshProUGUI>();
+             text.text = characters[i].ToString();*/
+            CreateCharacter(characters[i], i);
         }
+        CreateCharacter(back, characters.Length);
     }
+    void CreateCharacter(char character, int index)
+    {
+        GameObject g = Instantiate(characterPrefab, transform.position, Quaternion.identity);
+        g.transform.position = transform.position + new Vector3(offset * index, 0, 0);
+        g.transform.parent = transform;
+        TextMeshProUGUI text = g.GetComponent<TextMeshProUGUI>();
+        text.text = character.ToString();
+    }
+
     private void Update()
     {
         float input = Input.GetAxisRaw("Horizontal");
@@ -43,14 +55,19 @@ public class CharacterSelector : MonoBehaviour
                 ChangeSelection(-1);
             }
         }
-        if (input < 0.5f&&input>-0.5f)
+        if (input < 0.5f && input > -0.5f)
         {
             StopAllCoroutines();
             cooldown = startCooldown;
             canMoveNext = true;
         }
-        if (Input.GetButtonDown("Handbrake")|| Input.GetButtonDown("Submit"))
+        if (Input.GetButtonDown("Handbrake") || Input.GetButtonDown("Submit"))
         {
+            if (selection > characters.Length-1)
+            {
+                RemoveLetter();
+                return;
+            }
             AddLetter();
         }
     }
@@ -65,8 +82,8 @@ public class CharacterSelector : MonoBehaviour
 
         selection += increment;
         if (selection < 0)
-            selection = characters.Length-1;
-        if (selection > characters.Length-1)
+            selection = characters.Length;
+        if (selection > characters.Length)
             selection = 0;
         Vector3 pos = startPos + new Vector3(-offset * selection, 0, 0);
         transform.position = pos;
@@ -79,6 +96,14 @@ public class CharacterSelector : MonoBehaviour
         output.text += characters[selection];
         if (charCount == 3)
             Finish();
+    }
+    void RemoveLetter()
+    {
+        if (charCount > 0)
+        {
+            charCount--;
+            output.text = output.text.Remove(output.text.Length - 1);
+        }
     }
     void Finish()
     {

@@ -21,22 +21,23 @@ public class CharacterSelectCam : MonoBehaviour
 
     public Menu menu;
     public UnityEvent OnSelect;
+    bool canMoveNext = true;
+    const float startCooldown = 0.2f;
+    const float movingCooldown = 0.5f;
+    float cooldown = startCooldown;
 
-    // Start is called before the first frame update
     void Start()
     {
         menu = GetComponent<Menu>();
         index = 3;
     }
-
-    // Update is called once per frame
     void Update()
     {
         charInd = characterIndex;
         count = index % characters.Length;
-        while (index <= 0)
+        if (index <= 0)
         {
-            index += characters.Length;
+            index = characters.Length;
         }
 
         var choice = characters[count];
@@ -44,41 +45,52 @@ public class CharacterSelectCam : MonoBehaviour
         var goalRotation = Quaternion.LookRotation(choice.transform.position - transform.position);
         transform.rotation = Quaternion.Lerp(currentRotation, goalRotation, 0.1f);
 
-        if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) 
+        float input = Input.GetAxisRaw("Horizontal");
+        if (canMoveNext)
         {
-            index++;
+            if (Mathf.Abs(input) == 1)
+                MoveNext((int)input);
         }
-        if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) 
+        if (input < 0.5f && input > -0.5f)
         {
-            index--;
+            ResetInput();
         }
-        if (Input.GetButtonDown("Submit"))
+        characterIndex = count;
+        if (Input.GetButtonDown("Handbrake") || Input.GetButtonDown("Submit"))
         {
-            if (characterIndex!=2)
-            {// THIS PREVENTS THE PLAYER FROM SELECTING THE THIRD CHARACTER THAT ISN'T AVAILABLE YET.
-                if (OnSelect.GetPersistentEventCount() > 0)
-                    OnSelect.Invoke();
-                menu.SelectCharacter();
+            Select();
+        }
+
+    }
+    private void Select()
+    {
+        if (characterIndex != 2)
+        {// THIS PREVENTS THE PLAYER FROM SELECTING THE THIRD CHARACTER THAT ISN'T AVAILABLE YET.
+            if (OnSelect.GetPersistentEventCount() > 0)
+                OnSelect.Invoke();
+            menu.SelectCharacter();
+            if (AnalyticsController.Controller != null)
                 AnalyticsController.Controller.CharacterID(characterIndex);
-                this.enabled = false;
-            }
+            this.enabled = false;
         }
-        switch (count)
-        {
-            case 2:
-                Debug.Log("count = " + count);
-                characterIndex = 2;
-                break;
-            case 1:
-                Debug.Log("count = " + count);
-                characterIndex = 1;
-                break;
-            default:
-                Debug.Log("count = " + count);
-                characterIndex = 0;
-                break;
-
-        }
-
+    }
+    void ResetInput()
+    {
+        StopAllCoroutines();
+        cooldown = startCooldown;
+        canMoveNext = true;
+    }
+    void MoveNext(int add)
+    {
+        index += add;
+        StopAllCoroutines();
+        cooldown = movingCooldown;
+        StartCoroutine(MoveNextCooldown());
+    }
+    IEnumerator MoveNextCooldown()
+    {
+        canMoveNext = false;
+        yield return new WaitForSeconds(cooldown);
+        canMoveNext = true;
     }
 }
