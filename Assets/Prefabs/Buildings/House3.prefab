@@ -634,6 +634,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8530660086410264617}
   - component: {fileID: 8475908507587935051}
+  - component: {fileID: 1183462782152567724}
   m_Layer: 0
   m_Name: House3
   m_TagString: Obstacle
@@ -674,8 +675,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.226246, y: 4.244404, z: 10.042778}
-  m_Center: {x: -0.5198059, y: 2.1070728, z: -32.49189}
+  m_Size: {x: 7.5053883, y: 4.244404, z: 9.885398}
+  m_Center: {x: 1.1268684, y: 2.1070728, z: -32.413254}
+--- !u!65 &1183462782152567724
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6423077346389836661}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.648345, y: 4.2058525, z: 6.6090136}
+  m_Center: {x: -3.721419, y: 2.1142464, z: -30.797968}
 --- !u!1 &6455146082326141598
 GameObject:
   m_ObjectHideFlags: 0
