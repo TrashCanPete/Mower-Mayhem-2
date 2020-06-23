@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 6711179101973578362}
   - component: {fileID: 2340151529759455308}
   - component: {fileID: 8306161643087054005}
+  - component: {fileID: -5171672919618179687}
+  - component: {fileID: 6733592873343253347}
   m_Layer: 0
   m_Name: PicnicTable
   m_TagString: Untagged
@@ -78,3 +80,33 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &-5171672919618179687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7744427798575444073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 596e359b3f79dc04eaa4e813a5b8ea7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  piece1: {fileID: 1860171666350278265, guid: 6f9d3f98a3b788e4382dab98ece47085, type: 3}
+  destroyObject: 1
+  Colliding: 0
+  points: 15
+--- !u!64 &6733592873343253347
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7744427798575444073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: -3390137399685848091, guid: 7a46b4581a69df640bd2ec01fbf2c5a4, type: 3}
