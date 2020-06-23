@@ -111,4 +111,9 @@ public class Animations : MonoBehaviour
         yield return new WaitForSeconds(cooldown);
         canCrash = true;
     }
+
+    public void Celebrate()
+    {
+        anim.SetTrigger("Celebrating");
+    }
 }
