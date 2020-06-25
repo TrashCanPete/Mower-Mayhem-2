@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 2340151529759455308}
   - component: {fileID: 8306161643087054005}
   - component: {fileID: -5171672919618179687}
-  - component: {fileID: 6733592873343253347}
+  - component: {fileID: 2581734836272714824}
+  - component: {fileID: 8922328459426461148}
   m_Layer: 0
   m_Name: PicnicTable
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7744427798575444073}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.56, z: -11.718}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -41,7 +42,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7744427798575444073}
-  m_Mesh: {fileID: -3390137399685848091, guid: 7a46b4581a69df640bd2ec01fbf2c5a4, type: 3}
+  m_Mesh: {fileID: -3461713220530270485, guid: 7454f0ef1ef68804092a9a9f1303a9ee, type: 3}
 --- !u!23 &8306161643087054005
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -59,7 +60,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 220755ad3388ec549a949c3326896b69, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -96,8 +97,24 @@ MonoBehaviour:
   destroyObject: 1
   Colliding: 0
   points: 15
---- !u!64 &6733592873343253347
-MeshCollider:
+--- !u!114 &2581734836272714824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7744427798575444073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 596e359b3f79dc04eaa4e813a5b8ea7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  piece1: {fileID: 4628534504271115894, guid: 4bbe0b21e01fc974992bfad9d3720102, type: 3}
+  destroyObject: 1
+  Colliding: 0
+  points: 0
+--- !u!65 &8922328459426461148
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106,7 +123,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: -3390137399685848091, guid: 7a46b4581a69df640bd2ec01fbf2c5a4, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 2.7799454, y: 1.4457978, z: 3.4820216}
+  m_Center: {x: 0.0824092, y: 0, z: 0}
