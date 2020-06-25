@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6996229067471604962}
   m_Layer: 0
   m_Name: Chainfence
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -90,5 +90,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.010000003, y: 5.7358807e-10, z: 0.01}
-  m_Center: {x: 6.9849193e-10, y: 2.0816682e-17, z: 7.452593e-17}
+  m_Size: {x: 0.0077599124, y: 5.7358807e-10, z: 0.01}
+  m_Center: {x: 0.0001441862, y: 1.6067647e-11, z: -1.6309613e-18}
