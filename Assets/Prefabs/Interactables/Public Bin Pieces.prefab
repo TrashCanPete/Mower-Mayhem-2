@@ -130,6 +130,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenBin pieces.fbx
       objectReference: {fileID: 0}
+    - target: {fileID: -8254543103555496149, guid: 4f9648c46d1f03d43a784e61f99c4cf3,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3772781b28ed1ff4fa7c1bc38e88518b, type: 2}
     - target: {fileID: -4216859302048453862, guid: 4f9648c46d1f03d43a784e61f99c4cf3,
         type: 3}
       propertyPath: m_LocalPosition.x
