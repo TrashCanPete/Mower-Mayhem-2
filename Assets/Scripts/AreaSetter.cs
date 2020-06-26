@@ -38,6 +38,7 @@ public class AreaSetter : MonoBehaviour
         Timer.timeRemaining += bonusTime;
         areasCleared++;
         Notifications.SendNotification("Cleared " + areaName + " +" + bonusTime + " seconds!");
+        FindObjectOfType<Animations>().Celebrate();
         BonusDisplay.ShowBonus(ScoreTypes.ClearedArea, "Cleared " + areaName, bonusPoints);
         Destroy(gameObject);
     }
